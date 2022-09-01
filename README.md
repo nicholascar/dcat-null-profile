@@ -2,7 +2,11 @@
 
 This is a 'null' profile of the [Data Catalogue Vocabulary (DCAT)](https://www.w3.org/TR/vocab-dcat/).
 
-Being a 'null' profile means this profile implements no rules in addition to DCAT's and exists only to assist automated validation tooling by providing validators for DCAT and a profile persistent identifier, <>, to be used as a conformance target for data wanting to show conformance to DCAT's rules. This is necissary since DCAT doesn't provide such things.
+Being a 'null' profile means this profile implements no rules in addition to DCAT's and exists only to assist automated validation tooling by providing validators for DCAT and a profile persistent identifier, to be used as a conformance target for data wanting to show conformance to DCAT's rules. This is necissary since DCAT doesn't provide such things.
+
+The persistent identifier for this profile is:
+
+* [**https://w3id.org/profile/dcatnull**](https://w3id.org/profile/dcatnull)
 
 The validation rules here are inferred from the DCAT specification.
 
