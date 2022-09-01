@@ -17,7 +17,7 @@ The validation rules here are inferred from the DCAT specification.
 SHACL Validator | [`https://w3id.org/profile/dcatnull/validator`](https://w3id.org/profile/dcatnull/validator) | [validation](http://www.w3.org/ns/dx/prof/role/validation)
 DCAT Specification | [`https://www.w3.org/TR/vocab-dcat/`](https://www.w3.org/TR/vocab-dcat/) | [specification](http://www.w3.org/ns/dx/prof/role/specification)
 DCAT Ontology | [`https://www.w3.org/ns/dcat2.ttl`](https://www.w3.org/ns/dcat2.ttl) | [schema](http://www.w3.org/ns/dx/prof/role/schema)
-JSON-LD Context | [`https://w3id.org/profile/dcatnull/jsonld-context`](https://w3id.org/profile/dcatnull/validator) | [vocabulary](http://www.w3.org/ns/dx/prof/role/vocabulary)
+JSON-LD Context | [`https://w3id.org/profile/dcatnull/jsonld-context`](https://w3id.org/profile/dcatnull/jsonld-context) | [vocabulary](http://www.w3.org/ns/dx/prof/role/vocabulary)
 
 ## License
 
