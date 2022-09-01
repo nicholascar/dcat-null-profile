@@ -20,7 +20,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     dcterms:description """A profile of DCAT that implements no rules in addition to DCAT's. This profile exists only to assist automated validation since DCAT doesn't provide a validator like this.
 
 The validation rules here are inferred from the DCAT specification"""@en ;
-    dcterms:modified "2022-06-12"^^xsd:date ;
+    dcterms:modified "2022-09-01"^^xsd:date ;
     dcterms:publisher <https://orcid.org/0000-0002-8742-7730> ;
     dcterms:title "DCAT Null Profile (incomplete)"@en ;
     owl:versionIRI <https://w3id.org/profile/catprez/validator/1.0> ;
