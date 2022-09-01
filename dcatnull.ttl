@@ -1,0 +1,275 @@
+# DCAT Null (incomplete)
+PREFIX dcat: <http://www.w3.org/ns/dcat#>
+PREFIX dcatnull: <https://w3id.org/profile/dcatnull/validator/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sdo: <https://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX vcard: <http://www.w3.org/2006/vcard/ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+<https://w3id.org/profile/dcatnull>
+    a owl:Ontology ;
+    dcterms:created "2022-06-12"^^xsd:date ;
+    dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
+    dcterms:description """A profile of DCAT that implements no rules in addition to DCAT's. This profile exists only to assist automated validation since DCAT doesn't provide a validator like this.
+
+The validation rules here are inferred from the DCAT specification"""@en ;
+    dcterms:modified "2022-06-12"^^xsd:date ;
+    dcterms:publisher <https://orcid.org/0000-0002-8742-7730> ;
+    dcterms:title "DCAT Null Profile (incomplete)"@en ;
+    owl:versionIRI <https://w3id.org/profile/catprez/validator/1.0> ;
+    owl:versionInfo "1.0" ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+    sdo:email "nick@kurrawong.net"^^xsd:anyURI ;
+    sdo:name "Nicholas J. Car" ;
+.
+
+dcatnull:catalog
+    a sh:NodeShape ;
+    sh:property
+        dcatnull:catalog-homepage ,
+        dcatnull:catalog-themeTaxonomy ,
+        dcatnull:catalog-catalog ,
+        dcatnull:catalog-dataset ,
+        dcatnull:catalog-haspart ,
+        dcatnull:catalog-record ,
+        dcatnull:catalog-service ;
+    sh:targetClass dcat:Catalog ;
+.
+
+dcatnull:catalog-homepage
+    a sh:PropertyShape ;
+    sh:class foaf:Document ;
+    sh:path foaf:homepage ;
+.
+
+dcatnull:catalog-themeTaxonomy
+    a sh:PropertyShape ;
+    sh:class rdfs:Resource ;
+    sh:path dcat:themeTaxonomy ;
+.
+
+dcatnull:catalog-haspart
+    a sh:PropertyShape ;
+    sh:class dcat:Resource ;
+    sh:path dcterms:hasPart ;
+.
+
+dcatnull:catalog-dataset
+    a sh:PropertyShape ;
+    sh:class dcat:Dataset ;
+    sh:path dcat:dataset ;
+.
+
+dcatnull:catalog-service
+    a sh:PropertyShape ;
+    sh:class dcat:Service ;
+    sh:path dcat:service ;
+.
+
+dcatnull:catalog-catalog
+    a sh:PropertyShape ;
+    sh:class dcat:Catalog ;
+    sh:path dcat:catalog ;
+.
+
+dcatnull:catalog-record
+    a sh:PropertyShape ;
+    sh:class dcat:CatalogRecord ;
+    sh:path dcat:record ;
+.
+
+dcatnull:resource
+    a sh:NodeShape ;
+    sh:property
+        dcatnull:resource-accessRights ,
+        dcatnull:resource-conformsTo ,
+        dcatnull:resource-contactPoint ,
+        dcatnull:resource-creator ,
+        dcatnull:resource-description ,
+        dcatnull:resource-title ,
+        dcatnull:resource-issued ,
+        dcatnull:resource-modified ,
+        dcatnull:resource-language ,
+        dcatnull:resource-publisher ,
+        dcatnull:resource-theme ,
+        dcatnull:resource-type ,
+        dcatnull:resource-relation ,
+        dcatnull:resource-qualifiedRelation ,
+        dcatnull:resource-keyword ,
+        dcatnull:resource-landingPage ,
+        dcatnull:resource-qualifiedAttribution ,
+        dcatnull:resource-license ,
+        dcatnull:resource-rights ,
+        dcatnull:resource-hasPolicy ,
+        dcatnull:resource-isReferencedBy ;
+    sh:targetClass dcat:Resource ;
+.
+
+dcatnull:resource-accessRights
+    a sh:PropertyShape ;
+    sh:class dcterms:RightsStatement ;
+    sh:path dcterms:accessRights ;
+.
+
+dcatnull:resource-conformsTo
+    a sh:PropertyShape ;
+    sh:class dcterms:Standard ;
+    sh:path dcterms:conformsTo ;
+.
+
+dcatnull:resource-contactPoint
+    a sh:PropertyShape ;
+    sh:class vcard:Kind ;
+    sh:path dcat:contactPoint ;
+.
+
+dcatnull:resource-creator
+    a sh:PropertyShape ;
+    sh:class foaf:Agent ;
+    sh:path dcterms:creator ;
+.
+
+dcatnull:resource-description
+    a sh:PropertyShape ;
+    # sh:class rdfs:Literal ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:description ;
+.
+
+dcatnull:resource-title
+    a sh:PropertyShape ;
+    # sh:class rdfs:Literal ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcterms:title ;
+.
+
+dcatnull:resource-issued
+    a sh:PropertyShape ;
+    sh:or (
+        [
+            sh:datatype xsd:dateTimeStamp ;
+        ]
+        [
+            sh:datatype xsd:dateTime ;
+        ]
+        [
+            sh:datatype xsd:date ;
+        ]
+        [
+            sh:datatype xsd:gYearMonth ;
+        ]
+        [
+            sh:datatype xsd:gYear ;
+        ]
+    ) ;
+    sh:path dcterms:issued ;
+.
+
+dcatnull:resource-modified
+    a sh:PropertyShape ;
+    sh:or (
+        [
+            sh:datatype xsd:dateTimeStamp ;
+        ]
+        [
+            sh:datatype xsd:dateTime ;
+        ]
+        [
+            sh:datatype xsd:date ;
+        ]
+        [
+            sh:datatype xsd:gYearMonth ;
+        ]
+        [
+            sh:datatype xsd:gYear ;
+        ]
+    ) ;
+    sh:path dcterms:modified ;
+.
+
+dcatnull:resource-language
+    a sh:PropertyShape ;
+    sh:class dcterms:LinguisticSystem ;
+    sh:path dcterms:language ;
+.
+
+dcatnull:resource-publisher
+    a sh:PropertyShape ;
+    sh:class foaf:Agent ;
+    sh:path dcterms:publisher ;
+    sh:severity sh:Warning ;
+.
+
+dcatnull:resource-theme
+    a sh:PropertyShape ;
+    sh:class skos:Concept ;
+    sh:path dcat:theme ;
+.
+
+dcatnull:resource-type
+    a sh:PropertyShape ;
+    # sh:class rdfs:Class ;
+    sh:path dcterms:type ;
+.
+
+dcatnull:resource-relation
+    a sh:PropertyShape ;
+    sh:path dcterms:relation ;
+.
+
+dcatnull:resource-qualifiedRelation
+    a sh:PropertyShape ;
+    sh:class dcat:Relationship ;
+    sh:path dcat:qualifiedRelation ;
+.
+
+dcatnull:resource-keyword
+    a sh:PropertyShape ;
+    # sh:class rdfs:Literal ;
+    sh:nodeKind sh:Literal ;
+    sh:path dcat:keyword ;
+.
+
+dcatnull:resource-landingPage
+    a sh:PropertyShape ;
+    sh:class foaf:Document ;
+    sh:path dcat:landingPage ;
+.
+
+dcatnull:resource-qualifiedAttribution
+    a sh:PropertyShape ;
+    sh:class prov:Attribution ;
+    sh:path prov:qualifiedAttribution ;
+.
+
+dcatnull:resource-license
+    a sh:PropertyShape ;
+    sh:class dcterms:LicenseDocument ;
+    sh:path dcterms:license ;
+.
+
+dcatnull:resource-rights
+    a sh:PropertyShape ;
+    sh:class dcterms:RightsStatement ;
+    sh:path dcterms:rights ;
+.
+
+dcatnull:resource-hasPolicy
+    a sh:PropertyShape ;
+    sh:class odrl:Policy ;
+    sh:path odrl:hasPolicy ;
+.
+
+dcatnull:resource-isReferencedBy
+    a sh:PropertyShape ;
+    sh:path dcterms:isReferencedBy ;
+.
